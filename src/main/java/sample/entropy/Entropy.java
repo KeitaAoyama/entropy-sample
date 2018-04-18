@@ -1,20 +1,17 @@
 package sample.entropy;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
 public class Entropy {
 	
-	private static final int DECIMAL_PLACE = 4;
-
 	private static double log2(double a) {
 		return Math.log(a) / Math.log(2);
 	}
 
-	public static BigDecimal getEntropy(double n, double ai) {
+	public static double getEntropy(double n, double ai) {
+		if(0.0 == n && ai == 0.0) {
+			return 0.0;
+		}
 		final double pi = ai / n;
-		final BigDecimal h = BigDecimal.valueOf(-pi * log2(pi))
-				.setScale(DECIMAL_PLACE, RoundingMode.HALF_UP);
+		final double h = -pi * log2(pi);
 		return h;
 	}
 }
