@@ -7,7 +7,7 @@ public class Entropy {
 	}
 
 	public static double getEntropy(double n, double ai) {
-		if(0.0 == n && ai == 0.0) {
+		if(0.0 == n && 0.0 == ai) {
 			return 0.0;
 		}
 		final double pi = ai / n;
