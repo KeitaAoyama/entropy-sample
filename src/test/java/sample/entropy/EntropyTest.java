@@ -12,7 +12,7 @@ class EntropyTest {
 	void testGetEntropy() {
 
 		// Case1
-		assertEquals(-0.0, Entropy.getEntropy(n, n));
+		assertEquals(0.0, Math.abs(Entropy.getEntropy(n, n)));
 		
 		// Case2
 		assertEquals(0.0, Entropy.getEntropy(0, 0));
